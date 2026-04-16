@@ -1,0 +1,207 @@
+/* ====================
+   FUNDO DINÂMICO
+   ==================== */
+   .image-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1.5s ease-in-out;
+  }
+
+  /* Película escura em gradiente radial para focar no centro */
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 100%);
+  }
+
+  /* ====================
+     CENTRALIZAÇÃO ABSOLUTA
+     ==================== */
+  .main-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza perfeitamente no eixo Y */
+    z-index: 10;
+    padding: 20px;
+  }
+
+  /* ====================
+     WIDGET PRINCIPAL (GLASSMORPHISM PREMIUM)
+     ==================== */
+  .weather-widget {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15); /* Bem transparente */
+    backdrop-filter: blur(25px); /* Desfoque intenso para o fundo */
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+    color: white; /* Texto sempre branco no widget */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Força tudo a ficar centralizado */
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+  }
+
+  /* ====================
+     TEXTOS DO CABEÇALHO
+     ==================== */
+  .app-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-top: -5px;
+  }
+
+  /* ====================
+     NOVA BARRA DE PESQUISA MODERNA E AZUL
+     ==================== */
+  .search-box {
+    width: 100%; /* Garante que não ultrapasse a caixa principal */
+    box-sizing: border-box;
+  }
+
+  .modern-search-wrapper {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+  }
+
+  .modern-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px; /* Totalmente arredondado */
+    padding: 0 130px 0 25px; /* Espaço para o botão à direita */
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .modern-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .modern-input:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.4);
+    border-color: #0dcaf0; /* Destaque azul claro (info) ao focar */
+    box-shadow: 0 0 15px rgba(13, 202, 240, 0.5);
+  }
+
+  .modern-search-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    /* Gradiente azul combinando com o ícone de umidade e vento */
+    background: linear-gradient(45deg, #0dcaf0, #0b5ed7);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(13, 202, 240, 0.3);
+    box-sizing: border-box;
+  }
+
+  .modern-search-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(13, 202, 240, 0.5);
+  }
+
+  /* ====================
+     RESULTADOS DA PREVISÃO
+     ==================== */
+  .city-name {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .temperature {
+    font-size: 6.5rem;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  }
+
+  /* ====================
+     CAIXAS DE DADOS (CARDS)
+     ==================== */
+  .condition-box,
+  .info-card {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    width: 100%;
+  }
+
+  .condition-box {
+     /* Caixa inteira sem hover */
+  }
+
+  .condition-box hr {
+     border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .info-card:hover {
+    transform: scale(1.05); /* Efeito de zoom ao invés de subir */
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .info-card i {
+    color: #0dcaf0; /* Azul claro do bootstrap */
+  }
+
+  .info-card .bi-droplet-half {
+    color: #0b5ed7 !important; /* Azul mais escuro para umidade */
+  }
+
+  /* ====================
+     ANIMAÇÕES
+     ==================== */
+  .fade-in {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
