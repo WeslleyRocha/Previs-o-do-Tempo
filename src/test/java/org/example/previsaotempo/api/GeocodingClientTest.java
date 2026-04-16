@@ -1,5 +1,7 @@
 package org.example.previsaotempo.api;
 
+import org.example.previsaotempo.exception.ApiClientException;
+import org.example.previsaotempo.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
@@ -59,11 +61,9 @@ class GeocodingClientTest {
                 .thenReturn(mockHttpResponse);
 
         // Act & Assert
-        Exception exception = assertThrows(Exception.class, () -> {
+        assertThrows(ResourceNotFoundException.class, () -> {
             geocodingClient.getCoordinatesForCity("Xyz123CidadeFantasma");
         });
-
-        assertTrue(exception.getMessage().contains("Cidade não encontrada"));
     }
 
     @Test
@@ -74,10 +74,10 @@ class GeocodingClientTest {
                 .thenReturn(mockHttpResponse);
 
         // Act & Assert
-        Exception exception = assertThrows(Exception.class, () -> {
+        Exception exception = assertThrows(ApiClientException.class, () -> {
             geocodingClient.getCoordinatesForCity("São Paulo");
         });
 
-        assertTrue(exception.getMessage().contains("Erro ao consultar a API de Geocoding. HTTP Status: 500"));
+        assertTrue(exception.getMessage().contains("Ocorreu um erro inesperado ao buscar as coordenadas."));
     }
 }

@@ -1,5 +1,6 @@
 package org.example.previsaotempo.api;
 
+import org.example.previsaotempo.exception.ApiClientException;
 import org.example.previsaotempo.model.WeatherData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -46,8 +47,6 @@ class WeatherClientTest {
 
         // Assert
         assertNotNull(weatherData);
-        // Assumindo que a classe WeatherData tem um getter para getWeather() que retorna os detalhes, ou propriedades diretas.
-        // Se precisar, o objeto pode ser validado dependendo de como a sua model foi implementada.
     }
 
     @Test
@@ -59,10 +58,10 @@ class WeatherClientTest {
                 .thenReturn(mockHttpResponse);
 
         // Act & Assert
-        Exception exception = assertThrows(Exception.class, () -> {
+        Exception exception = assertThrows(ApiClientException.class, () -> {
             weatherClient.getWeatherByCoordinates(900.0, -200.0);
         });
 
-        assertTrue(exception.getMessage().contains("Erro ao consultar a API Open-Meteo. HTTP Status: 400"));
+        assertTrue(exception.getMessage().contains("Ocorreu um erro inesperado ao buscar os dados do tempo."));
     }
 }
