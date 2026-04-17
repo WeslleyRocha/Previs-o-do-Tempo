@@ -10,18 +10,14 @@ Este aplicativo foi construído como parte de um projeto de entrega para o curso
 
 ## 🎥 Demonstração (App em Funcionamento)
 
-> *Substitua o link abaixo pela URL do vídeo demonstrando o funcionamento da aplicação (ex: link do YouTube ou do próprio repositório no GitHub).*
-
-[![Assista ao vídeo de demonstração](https://img.youtube.com/vi/INSERIR_ID_DO_VIDEO_AQUI/0.jpg)](https://www.youtube.com/watch?v=INSERIR_ID_DO_VIDEO_AQUI "Clique para assistir à demonstração")
-
-*(Caso prefira inserir um GIF animado diretamente no README, substitua o bloco acima por: `![Demonstração do App](caminho/para/o/seu/video.gif)`)*
+https://github.com/user-attachments/assets/8c8802fe-0eb7-491d-9495-9ce20487feff
 
 ---
 
 ## 🚀 Funcionalidades
 
 - **Busca por Cidade:** O usuário digita o nome da cidade e o sistema busca os dados climáticos.
-- **Background Dinâmico:** A imagem de fundo do site muda dinamicamente de acordo com o clima sorteado/retornado (Sol, Chuva, Vento, Nublado, Raios).
+- **Background Dinâmico:** A imagem de fundo do site muda dinamicamente de acordo com o clima sorteado/retornado (Sol, Chuva, Vento, Nublado, Raios, Trovões).
 - **Interface Premium (Glassmorphism):** Design moderno com efeito de vidro fosco, sombras suaves e componentes perfeitamente alinhados e centralizados.
 - **Tratamento de Erros:** Exibe mensagens amigáveis caso a cidade não seja encontrada.
 - **Responsividade:** Layout adaptável para dispositivos móveis e desktops.
